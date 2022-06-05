@@ -1,0 +1,10 @@
+.DS_Store
+.eslintcache
+.vscode/
+build/
+coverage/
+dist/
+docs/
+lib/
+node_modules/
+package-lock.json

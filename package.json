@@ -1,0 +1,114 @@
+{
+  "name": "@rotini/utils",
+  "description": "rotini cli framework utils",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "rotini team",
+  "repository": "git@github.com:rotini-js/utils.git",
+  "homepage": "https://github.com/rotini-js/utils/blob/master/README.md",
+  "bugs": "https://github.com/rotini-js/utils/issues",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/"
+  ],
+  "engines": {
+    "node": ">=12.0.0",
+    "npm": "use-yarn",
+    "yarn": ">=1.22.18"
+  },
+  "keywords": [
+    "rotini",
+    "cli",
+    "framework",
+    "utils"
+  ],
+  "scripts": {
+    "build:dev": "tsc src/index.ts --allowUnreachableCode --alwaysStrict --declaration --esModuleInterop --forceConsistentCasingInFileNames --module commonjs --moduleResolution nodenext --noFallthroughCasesInSwitch --noImplicitReturns --noUnusedLocals --noUnusedParameters --outDir lib/ --removeComments --strict --target es6",
+    "build:dev:watch": "npm run build:dev -- --watch",
+    "build:prod": "npm run build:types && npm run build:prod:cjs && npm run build:prod:esm",
+    "build:prod:cjs": "esbuild src/index.ts --outfile=lib/index.cjs.js --platform=node --target=node12 --format=cjs --bundle --minify",
+    "build:prod:esm": "esbuild src/index.ts --outfile=lib/index.esm.js --platform=node --target=node12 --format=esm --bundle --minify",
+    "build:types": "npm run build:dev -- --emitDeclarationOnly",
+    "ci": "npm run lint && npm run deps && npm run test && npm run build",
+    "deps": "ncu -e 2",
+    "lint": "eslint src/**/* --env jest",
+    "release": "npx semantic-release",
+    "test": "jest __tests__/* --colors --runInBand",
+    "test:watch": "jest __tests__/* --colors --runInBand --watch"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.5.1",
+    "@types/node": "^17.0.36",
+    "@typescript-eslint/eslint-plugin": "^5.27.0",
+    "@typescript-eslint/parser": "^5.27.0",
+    "esbuild": "^0.14.42",
+    "eslint": "^8.16.0",
+    "jest": "^28.1.0",
+    "npm-check-updates": "^13.0.3",
+    "semantic-release": "^19.0.2",
+    "ts-jest": "^28.0.3",
+    "typescript": "^4.7.2"
+  },
+  "eslintConfig": {
+    "env": {
+      "commonjs": true,
+      "es6": true,
+      "node": true,
+      "jest": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "ignorePatterns": [
+      "**/*.js"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 12,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "./src/**/*.ts",
+          "./src/**/*.tsx",
+          "./__tests__/**/*.ts",
+          "./__tests__/**/*.tsx"
+        ],
+        "rules": {
+          "semi": [
+            "error",
+            "always"
+          ],
+          "no-use-before-define": "off",
+          "@typescript-eslint/explicit-function-return-type": "error"
+        }
+      }
+    ],
+    "rules": {
+      "semi": [
+        "error",
+        "always"
+      ],
+      "no-use-before-define": "off",
+      "@typescript-eslint/explicit-function-return-type": "error"
+    }
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/__tests__/**/*.test.+(ts|tsx)"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    }
+  }
+}
