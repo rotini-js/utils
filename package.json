@@ -1,7 +1,7 @@
 {
   "name": "@rotini/utils",
   "description": "rotini cli framework utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "author": "rotini team",
   "repository": "git@github.com:rotini-js/utils.git",
