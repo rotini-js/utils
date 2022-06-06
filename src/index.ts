@@ -1,10 +1,15 @@
-export const isAllowedStringValue = (value: unknown, values: Array<unknown>): boolean => values.includes(value);
+export const getDuplicateStrings = (array: string[]): { hasDuplicates: boolean, duplicates: string[] } => {
+  const duplicates = array.filter((value: string, index: number) => array.indexOf(value) !== index);
+  return { hasDuplicates: duplicates.length > 0, duplicates };
+};
 
-export const isNotAllowedStringValue = (value: unknown, values: Array<unknown>): boolean => !isAllowedStringValue(value, values);
+export const isAllowedStringValue = (value: unknown, values: unknown[]): boolean => values.includes(value);
 
-export const isArrayOfStrings = (values: Array<unknown>): boolean => values.every((value: unknown) => typeof value === 'string');
+export const isNotAllowedStringValue = (value: unknown, values: unknown[]): boolean => !isAllowedStringValue(value, values);
 
-export const isNotArrayOfStrings = (values: Array<unknown>): boolean => !isArrayOfStrings(values);
+export const isArrayOfStrings = (values: unknown[]): boolean => values.every((value: unknown) => typeof value === 'string');
+
+export const isNotArrayOfStrings = (values: unknown[]): boolean => !isArrayOfStrings(values);
 
 export const isArray = (value: unknown): boolean => Array.isArray(value);
 

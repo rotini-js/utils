@@ -1,6 +1,44 @@
 import * as Utils from '../src/index';
 
 describe('utils', () => {
+  describe('getDuplicateStrings', () => {
+    const testCases = [
+      {
+        name: 'does not have duplicates',
+        value: ['apple', 'orange', 'grape'],
+        expected: {
+          hasDuplicates: false,
+          duplicates: []
+        }
+      },
+      {
+        name: 'has duplicates',
+        value: ['apple', 'orange', 'grape', 'orange'],
+        expected: {
+          hasDuplicates: true,
+          duplicates: ['orange']
+        }
+      },
+      {
+        name: 'has multiple duplicates',
+        value: ['apple', 'orange', 'grape', 'orange', 'apple'],
+        expected: {
+          hasDuplicates: true,
+          duplicates: ['orange', 'apple']
+        }
+      }
+    ];
+
+    testCases.forEach(({ name, value, expected }) => {
+      it(name, () => {
+        const result = Utils.getDuplicateStrings(value);
+        expect(result.hasDuplicates).toBe(expected.hasDuplicates);
+        expect(result.duplicates.length).toBe(expected.duplicates.length);
+        expect(result.duplicates).toEqual(expect.arrayContaining(expected.duplicates));
+      });
+    });
+  });
+
   describe('isAllowedStringValue', () => {
     const testCases = [
       {
