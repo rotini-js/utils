@@ -873,6 +873,16 @@
   dependencies:
     "@octokit/openapi-types" "^11.2.0"
 
+"@rotini/eslint-config@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@rotini/eslint-config/-/eslint-config-1.0.6.tgz#403009a4698aefd134c8d72c5d6cb906a1281ea7"
+  integrity sha512-B3cu74Fe0sm6hfWiiUwoMUCkrXIpRjhdckeS4l7OjPb2WxMPyvzdycibptbQVJirUTgw/MzFDCOrP2UyjhoX7w==
+
+"@rotini/jest-preset@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@rotini/jest-preset/-/jest-preset-1.0.1.tgz#3689f2eba15964dff57e0f5fb0e82f70e00b90cd"
+  integrity sha512-HOEkxw28+G/GlEKjTkwQZu5KDY5T8jIh8zQNtzfIkSM4ZWwv1IbsYeHbfGJpDJhBR2V4lTZyyHZSZBbY08zJyA==
+
 "@semantic-release/commit-analyzer@^9.0.2":
   version "9.0.2"
   resolved "https://registry.yarnpkg.com/@semantic-release/commit-analyzer/-/commit-analyzer-9.0.2.tgz#a78e54f9834193b55f1073fa6258eecc9a545e03"
@@ -1071,12 +1081,7 @@
   resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.2.tgz#ee771e2ba4b3dc5b372935d549fd9617bf345b8c"
   integrity sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==
 
-"@types/node@*":
-  version "17.0.39"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.39.tgz#3652d82e2a16b4ea679d5ea3143b816c91b7e113"
-  integrity sha512-JDU3YLlnPK3WDao6/DlXLOgSNpG13ct+CwIO17V8q0/9fWJyeMJJ/VyZ1lv8kDprihvZMydzVwf0tQOqGiY2Nw==
-
-"@types/node@^17.0.40":
+"@types/node@*", "@types/node@^17.0.40":
   version "17.0.40"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.40.tgz#76ee88ae03650de8064a6cf75b8d95f9f4a16090"
   integrity sha512-UXdBxNGqTMtm7hCwh9HtncFVLrXoqA3oJW30j6XWp5BH/wu3mVeaxo7cq5benFdBw34HB3XDT2TRPI7rXZ+mDg==
@@ -3672,9 +3677,9 @@ just-diff-apply@^5.2.0:
   integrity sha512-dgFenZnMsc1xGNqgdtgnh7DK+Oy352CE3VZLbzcbQpsBs9iI2K3M0IRrdgREZ72eItTjbl0suRyvKRdVQa9GbA==
 
 just-diff@^5.0.1:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/just-diff/-/just-diff-5.0.2.tgz#68854c94280c37d28cb266d8f29bdd2cd29f003e"
-  integrity sha512-uGd6F+eIZ4T95EinP8ubINGkbEy3jrgBym+6LjW+ja1UG1WQIcEcQ6FLeyXtVJZglk+bj7fvEn+Cu2LBxkgiYQ==
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/just-diff/-/just-diff-5.0.3.tgz#4c9c514dec5526b25ab977590e3c39a0cf271554"
+  integrity sha512-a8p80xcpJ6sdurk5PxDKb4mav9MeKjA3zFKZpCWBIfvg8mznfnmb13MKZvlrwJ+Lhis0wM3uGAzE0ArhFHvIcg==
 
 keyv@^3.0.0:
   version "3.1.0"
